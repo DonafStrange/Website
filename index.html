@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Resume | [Your Name]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1e40af;
+            --accent-color: #10b981;
+            --text-color: #1f2937;
+            --light-bg: #f9fafb;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .header-gradient {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .publication-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 20px;
+            width: 1px;
+            height: calc(100% - 15px);
+            background-color: #d1d5db;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="header-gradient text-white py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/3 flex justify-center mb-8 md:mb-0">
+                <div class="profile-img w-48 h-48 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                    <!-- Replace with your actual image -->
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQHezty6aHxLIQ/profile-displayphoto-shrink_200_200/B56ZSDB_vwHsAg-/0/1737365126999?e=2147483647&v=beta&t=PXxn11EjwWbLRk8VRc9nD1lbCi_7oxB-sv9giHlaiqM" 
+                         alt="Profile Photo" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="md:w-2/3 text-center md:text-left px-6">
+                <h1 class="text-4xl font-bold mb-2">Aftab Anwar</h1>
+                <h2 class="text-2xl font-semibold mb-4">Post Graduate</h2>
+                <p class="text-lg mb-6 max-w-2xl">Specializing in computational neuroscience, signal processing, and brain modeling, with experience in neural simulations, embedded systems, and circuit design.</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="mailto:aftabaishaanwar@gmail.com" class="bg-white text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
+                        <i class="fas fa-envelope mr-2"></i> Contact Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/aftab-anwar" class="bg-transparent border-2 border-white px-6 py-2 rounded-full font-medium hover:bg-white hover:text-blue-600 transition">   <!-- path for the CV a href="path/to/your/cv.pdf" -->
+                        <i class="fab fa-linkedin mr-2"></i> Linkedin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- About Section -->
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl font-bold section-title">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2">
+                    <p class="mb-4 text-justify">I am a researcher in computational neuroscience with a focus on understanding how brain dynamics relate to behavior, cognition, and neurotechnology applications. My work spans brain modeling, EEG analysis, and brain-computer interfaces designing, combining theoretical frameworks with real-world neural data.</p>
+                    <p class="mb-4 text-justify">Currently, I am a Junior Research Fellow at IIT Jodhpur, where I contribute to modeling brain activity using large-scale oscillator networks and connectome-based simulations. I have also worked on decoding attention and emotional states from EEG during naturalistic smartphone use, using both classical machine learning and deep learning methods.</p>
+                    <p class="text-justify">With a strong interdisciplinary background, I aim to bridge the gap between brain modeling and applied neurotechnology, ultimately contributing to systems for diagnosis, intervention, and brain-computer communication.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Quick Facts</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-graduation-cap text-blue-500 mt-1 mr-3"></i>
+                            <span><strong>Master of Science</strong> in Electronics<br>Jamia Millia Islamia, 2022 – 2024</span>
+                        </li>
+                        <!--<li class="flex items-start">
+                            <i class="fas fa-university text-blue-500 mt-1 mr-3"></i>
+                            <span><strong>Current Position</strong><br>Junior Research Fellow, IIT Jodhpur – School of AI and Data Science</span>
+                        </li> -->
+                        <li class="flex items-start">
+                            <i class="fas fa-brain text-blue-500 mt-1 mr-3"></i>
+                            <span><strong>Research Areas</strong><br>Computational Neuroscience, Brain Modeling, EEG, Machine Learning</span>
+                        </li>
+                        <!-- <li class="flex items-start">
+                            <i class="fas fa-flask text-blue-500 mt-1 mr-3"></i>
+                            <span><strong>Key Projects</strong><br>EEG-based emotional state classification using ML/DL<br>Oscillatory brain network modeling using Wilson-Cowan dynamics</span>
+                        </li> -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-16">
+            <h2 class="text-3xl font-bold section-title">Education</h2>
+            <div class="space-y-8">
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-semibold">MSc in Electronics</h3>
+                            <span class="text-blue-600 font-medium">2022 - 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">Jamia Millia Islamia, New Delhi, India</p>
+                        <p class="mb-2"><strong>Dissertation:</strong> " Optogenetic Modulation of Neural Activity in Alzheimer’s Disease Using Channelrhodopsin-2"</p>
+                        <p><strong>Supervisor:</strong> Dr. Mukesh Pratap Singh</p>
+                        <p><strong>CGPA:</strong> 8.18/10 First Division With Distinction</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-semibold">BSc in Physics and Mathematics</h3>
+                            <span class="text-blue-600 font-medium">2018 - 2021</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">Jamia Millia Islamia, New Delhi, India</p>
+                        <!--<p class="mb-2"><strong>Thesis:</strong> "Reinforcement Learning for Autonomous Systems"</p> -->
+                        <p class="mb-2"><strong>Core Study:</strong> Physics and Mathematics</p>
+                        <p><strong>CGPA:</strong> 7.95/10.0 First Division</p>
+                    </div>
+                </div>
+                
+                <!--<div class="timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-semibold">BSc in Computer Science</h3>
+                            <span class="text-blue-600 font-medium">2008 - 2012</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">University of California, Berkeley, CA</p>
+                        <p class="mb-2"><strong>Honors:</strong> Summa Cum Laude</p>
+                        <p><strong>GPA:</strong> 3.9/4.0</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Experience -->
+        <section id="research" class="mb-16">
+            <h2 class="text-3xl font-bold section-title">Research Experience</h2>
+            <div class="space-y-8">
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-semibold">Junior Research Fellow</h3>
+                            <span class="text-blue-600 font-medium">July 2024 - March 2025</span>
+                        </div>
+                        <p class="text-gray-600 mb-1">Indian Institute of Technology Jodhpur, D/O Artificial Inteligence and Data Science, Center for Brain Science and Applications </p>
+                        <p><strong>Supervisor:</strong> Dr. Saurabh Gandhi</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                        <li>Contributed to a SERB-funded project focused on large-scale brain modeling using Wilson-Cowan networks</li>
+                        <li>Simulated neural mass models to investigate attention and disease-specific brain dynamics</li>
+                        <li>Collaborated on EEG/TMS data-driven computational pipelines and model validation</li>
+                        <li>Gained experties in Diffusion Weighted image processing and making conectome</li>
+                        <li>Gained expertise in EEG signal processing, MNE-Python, and brain connectivity analysis</li>                        
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-semibold">Intern</h3>
+                            <span class="text-blue-600 font-medium">June 2023 - July 2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">Indian Institute of Technology BHU, Department of Biomedical Engineering</p>
+                        <p><strong>Supervisor:</strong> Dr. Sanjeev Kumar Mahato</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Worked on CMOS-based biosensor development for TSH (Thyroid Stimulating Hormone) detection</li>
+                            <li>Applied image processing and machine learning techniques for signal enhancement and analyte classification</li>
+                            <li>Gained hands-on experience with laboratory instrumentation including microscopes, microfluidic devices, and biosensing platforms</li>                            
+                        </ul>
+                    </div>
+                </div>
+                
+                <!--<div class="timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-semibold">Research Assistant</h3>
+                            <span class="text-blue-600 font-medium">2014 - 2018</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">Stanford AI Lab, Stanford University</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Developed novel few-shot learning algorithms that achieved state-of-the-art results</li>
+                            <li>Published 8 first-author papers in top conferences (CVPR, NeurIPS, ICLR)</li>
+                            <li>Mentored 3 undergraduate researchers who went on to PhD programs</li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <template> 
+        <section id="publications" class="mb-16">
+            <h2 class="text-3xl font-bold section-title">Selected Publications</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Journal Publications -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Journal Articles</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <p class="font-medium">Doe, J., Smith, A., & Johnson, B. (2023).</p>
+                            <p>"Efficient Transformers for Low-Resource Languages"</p>
+                            <p class="text-sm text-gray-600">Journal of Machine Learning Research, 24(120), 1-35.</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Doe, J., & Lee, C. (2022).</p>
+                            <p>"Meta-Learning for Few-Shot Image Classification"</p>
+                            <p class="text-sm text-gray-600">IEEE Transactions on Pattern Analysis and Machine Intelligence, 44(5), 1234-1247.</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Doe, J., et al. (2021).</p>
+                            <p>"Attention Mechanisms in Neural Networks: A Survey"</p>
+                            <p class="text-sm text-gray-600">Artificial Intelligence Review, 54(4), 2937-2970.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Conference Publications -->
+                <div class="publication-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Conference Papers</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <p class="font-medium">Doe, J., & Wang, L. (2023).</p>
+                            <p>"Adaptive Neural Architectures for Multimodal Learning"</p>
+                            <p class="text-sm text-gray-600">Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI 2023).</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Doe, J., et al. (2022).</p>
+                            <p>"Self-Supervised Learning for Medical Image Analysis"</p>
+                            <p class="text-sm text-gray-600">Proceedings of the 36th Conference on Neural Information Processing Systems (NeurIPS 2022).</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Doe, J., & Chen, R. (2021).</p>
+                            <p>"Dynamic Neural Networks for Efficient Inference"</p>
+                            <p class="text-sm text-gray-600">Proceedings of the 38th International Conference on Machine Learning (ICML 2021).</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="#" class="text-blue-600 font-medium hover:underline">
+                    <i class="fas fa-external-link-alt mr-2"></i> View Full Publication List
+                </a>
+            </div>
+        </section>
+
+        <!-- Teaching Section -->
+        <section id="teaching" class="mb-16">
+            <h2 class="text-3xl font-bold section-title">Teaching</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Courses Taught</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <p class="font-medium">CS 501: Advanced Machine Learning</p>
+                            <p class="text-sm text-gray-600">Graduate level course covering deep learning, reinforcement learning, and advanced topics in ML</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">CS 350: Artificial Intelligence</p>
+                            <p class="text-sm text-gray-600">Undergraduate course on fundamental AI concepts and algorithms</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">CS 450: Natural Language Processing</p>
+                            <p class="text-sm text-gray-600">Graduate/undergraduate course on NLP techniques and applications</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Student Advising</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <p class="font-medium">PhD Students</p>
+                            <p class="text-sm text-gray-600">Currently advising 5 PhD students in AI/ML research</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Master's Students</p>
+                            <p class="text-sm text-gray-600">Advised 8 MS students to completion (2019-present)</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Undergraduate Researchers</p>
+                            <p class="text-sm text-gray-600">Mentored 15+ undergraduate researchers through independent study projects</p>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </section>
+    </template>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-16">
+            <h2 class="text-3xl font-bold section-title">Skills</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              
+              <!-- Left Column: Research Areas -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Technical Skills</h3>
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Mathematical Modeling & Biophysics</span>
+                      <span class="text-gray-600">Expert</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Signal Processing</span>
+                      <span class="text-gray-600">Expert</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Machine Learning</span>
+                      <span class="text-gray-600">Advanced</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Deep Learning</span>
+                      <span class="text-gray-600">Proficient</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Right Column: Technical Proficiencies -->
+              <div>
+                <h3 class="text-xl font-semibold mb-4">Soft Skills</h3>
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Python / MATLAB / VHDL</span>
+                      <span class="text-gray-600">Expert</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Libraries: NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow, PyTorch, MNE, Neurolib</span>
+                      <span class="text-gray-600">Advanced</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Neuroimaging Tools: FSL, MRtrix3, FreeSurfer, ANTs</span>
+                      <span class="text-gray-600">Advanced</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Simulation Tools: TVB, NEURON, COMSOL, AMBERTOOLs</span>
+                      <span class="text-gray-600">Advanced</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                  </div>
+                  <!--<div>
+                    <div class="flex justify-between mb-1">
+                      <span class="font-medium">Experimental Techniques & Fabrication</span>
+                      <span class="text-gray-600">Proficient</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                  </div> -->
+                </div>
+              </div>
+          
+            </div>
+          </section>
+          
+        <!-- Awards & Grants -->
+        <template>
+        <section id="awards" class="mb-16">
+            <h2 class="text-3xl font-bold section-title">Awards & Grants</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Research Grants</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <p class="font-medium">NSF CAREER Award</p>
+                            <p class="text-sm text-gray-600">2022-2027 | $500,000</p>
+                            <p>"Adaptive Neural Architectures for Low-Resource Learning"</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">NIH R01 Grant</p>
+                            <p class="text-sm text-gray-600">2021-2024 | $1.2M (Co-PI)</p>
+                            <p>"AI-Assisted Diagnosis of Rare Diseases"</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">NSF Medium Grant</p>
+                            <p class="text-sm text-gray-600">2020-2023 | $750,000</p>
+                            <p>"Multimodal Learning for Educational Applications"</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Honors & Awards</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <p class="font-medium">Best Paper Award</p>
+                            <p class="text-sm text-gray-600">AAAI Conference on Artificial Intelligence, 2021</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Outstanding Young Researcher Award</p>
+                            <p class="text-sm text-gray-600">Association for Computational Linguistics, 2020</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">Google PhD Fellowship</p>
+                            <p class="text-sm text-gray-600">2016-2018</p>
+                        </li>
+                        <li>
+                            <p class="font-medium">NSF Graduate Research Fellowship</p>
+                            <p class="text-sm text-gray-600">2014-2017</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        </template> 
+
+        <!-- Contact Section -->
+        <!--
+        <section id="contact" class="mb-16">
+            <h2 class="text-3xl font-bold section-title">Contact</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        -->
+</html>
