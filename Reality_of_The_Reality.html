@@ -20,16 +20,6 @@
             line-height: 1.7;
         }
 
-        .modal {
-        display: none;                     /* hidden by default */
-        position: fixed;                   /* stays fixed on screen, not scroll */
-        z-index: 50;                       /* layered above other elements */
-        left: 0; top: 0;                   /* start at top-left corner */
-        width: 100%; height: 100%;         /* full screen overlay */
-        background-color: rgba(0,0,0,0.6); /* semi-transparent dark background */
-        justify-content: center;           /* centers horizontally */
-        align-items: center;               /* centers vertically */
-        }
 
     </style>
 </head>
@@ -95,58 +85,28 @@
     </div>
 
 
-<!-- Comment Button -->
-<div class="text-center mb-12">
-  <button onclick="openModal()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition">
-    Add Comment
-  </button>
-</div>
-
 <!-- Comments Section -->
 <div class="max-w-4xl mx-auto px-6 mb-12">
-  <h2 class="text-2xl font-semibold mb-4">Comments</h2>
-  <div id="comments-container" class="space-y-4"></div>
+  <h2 class="text-2xl font-semibold mb-4">Comments are wholeheartedly welcome 😊</h2>
+  
+  <!-- Giscus Embed -->
+  <div id="giscus-container"></div>
+  <script src="https://giscus.app/client.js"
+          data-repo="DonafStrange/Website"
+          data-repo-id="R_kgDOPCinbA"
+          data-category="Ideas"
+          data-category-id="DIC_kwDOPCinbM4CvE8S"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>
 </div>
-
-<!-- Modal for Comment -->
-<div id="commentModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-  <div class="bg-white p-6 rounded-lg shadow-lg w-96 relative">
-    <h3 class="text-xl font-bold mb-4">Add a Comment</h3>
-    <form id="commentForm" method="POST" 
-          action="https://staticman3.herokuapp.com/v3/entry/github/DonafStrange/Website/main/comments">
-      
-      <!-- Hidden fields required by Staticman -->
-      <input type="hidden" name="options[redirect]" value="https://donafstrange.github.io/Website/Reality_of_The_Reality.html">
-      <input type="hidden" name="options[slug]" value="Reality_of_The_Reality">
-      <input type="hidden" name="fields[parent]" id="parentField" value="">
-
-      <input type="text" name="fields[name]" placeholder="Your Name" class="w-full border p-2 rounded mb-3" required>
-      <input type="email" name="fields[email]" placeholder="Your Email" class="w-full border p-2 rounded mb-3" required>
-      <textarea name="fields[message]" placeholder="Your Comment" class="w-full border p-2 rounded mb-3" required></textarea>
-      
-      <div class="flex justify-between">
-        <button type="button" onclick="closeModal()" class="bg-gray-400 px-4 py-2 rounded text-white">Cancel</button>
-        <button type="submit" class="bg-blue-600 px-4 py-2 rounded text-white">Submit</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script>
-  let replyingTo = null;
-
-  function openModal(replyId = null) {
-    replyingTo = replyId;
-    document.getElementById("parentField").value = replyId || "";
-    document.getElementById("commentModal").classList.remove("hidden");
-  }
-
-  function closeModal() {
-    document.getElementById("commentModal").classList.add("hidden");
-    document.getElementById("commentForm").reset();
-    replyingTo = null;
-  }
-</script>
 
 
 </body>
