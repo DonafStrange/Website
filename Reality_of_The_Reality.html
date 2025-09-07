@@ -19,6 +19,18 @@
             color: var(--text-color);
             line-height: 1.7;
         }
+
+        .modal {
+        display: none;                     /* hidden by default */
+        position: fixed;                   /* stays fixed on screen, not scroll */
+        z-index: 50;                       /* layered above other elements */
+        left: 0; top: 0;                   /* start at top-left corner */
+        width: 100%; height: 100%;         /* full screen overlay */
+        background-color: rgba(0,0,0,0.6); /* semi-transparent dark background */
+        justify-content: center;           /* centers horizontally */
+        align-items: center;               /* centers vertically */
+        }
+
     </style>
 </head>
 <body class="bg-gray-50">
@@ -59,7 +71,7 @@
          If we assume that everything follows strict laws of forces, energies,and  matter, then, in principle, if we possessed complete knowledge of every single detail of one instant in time, we could calculate the future. Do you see what this means? If you knew everything about one moment, you could unfold time itself, tracing every event across every line of its timeline. Doesn’t this begin to feel like a simulation? As though the universe itself could be computed, frame by frame, moment by moment? We know life exists at least here on Earth. Whether it exists elsewhere or not, we are the proof that it is possible. And if life exists here, then it must have been written into the equation from the very beginning. Every event leading to it, the formation of cells, the evolution of minds, the rise of thought, was already contained in the law.  
         </p>
         <p class="text-lg text-gray-800 text-justify mb-6">
-         Our bodies, our brains, the very thoughts we are thinking all of them are bound to the laws of physics. If we continue our perfect calculation, then not only can we know the history of life and its past evolution, but also its future. Who will be born, who will meet whom, what they will think, what they will create, all of it could, in theory, be calculated without error. Reality would then be nothing more than the unfolding of inevitabilities. But let us pause for a moment. What do we actually mean by “life”? It is that which can think, reason, replicate itself, and advance further. Life is that which has the ability to create new forms of life, to build beyond itself if it evolves far enough. Returning to our track, we see that everything matters, energy, thought, and life arose within the same order, the same laws. And all of this was already contained in the universal equation.   
+         Our bodies, our brains, and even the very thoughts we think are all governed by the laws of physics. At their core, they are nothing more than chemical reactions within us, and if we look deeper, they are simply interactions of subatomic particles and external entities. Our thoughts arise from the firing of neurons in the brain, which themselves are just patterns of particle interactions. If we could carry out perfect calculations of these processes, then not only could we trace the entire history of life and its evolution, but we could also foresee its future. Who will be born, who will meet whom, what they will think, what they will create, all of it, in theory, could be predicted with absolute certainty. In such a view, reality becomes nothing more than the gradual unfolding of inevitabilities. But let us pause for a moment. What do we actually mean by “life”? It is that which can think, reason, replicate itself, and advance further. Life is that which has the ability to create new forms of life, to build beyond itself if it evolves far enough. Returning to our track, we see that everything matters, energy, thought, and life arose within the same order, the same laws. And all of this was already contained in the universal equation.   
         </p>
         <p class="text-lg text-gray-800 text-justify mb-6">
          Now, let us touch upon something closer to us: artificial intelligence. AI is, in its essence, an algorithm, a system that thinks and reasons. Slowly, it is becoming like us, and in some ways, surpassing us. AI now assists in research, creates art and music, writes words, analyzes the stock market it does almost everything humans can do. And at its heart, AI is nothing but mathematics. It is a set of rules, born from human minds, that mimics our ability to think and understand. But if we look deeper, AI itself is only the result of interactions between entities colliding, combining, evolving, all in accordance with physics. It, too, is part of the universal equation. Every event that occurs has its reason in the past. Every event unfolds because the interactions before it demanded it. These interactions obey laws, and those laws together form what we have called the universal equation.   
@@ -74,10 +86,68 @@
          If someone kills, if someone dies, if someone commits a crime, if someone shows kindness, if someone resists evil, or if someone falls into it are these acts not already written? Even the moment when you stop yourself from doing something, or the hesitation you feel before making a choice, or the thoughts running through your mind right now, are they not also events destined to happen exactly as they are? Yes, they are. They will remain so, unless something interferes. Unless there is a hand beyond the law. A God. But we have no proof of God. Nowhere in the chain of events do we find evidence of such a being. If there is no God, then the fear of punishment after death disappears as well. And without that fear, the difference between right and wrong becomes uncertain. Morality becomes a matter of perspective. Some humans kill animals for food without feeling any guilt, while others, who live as strict vegetarians, see the act as unforgivable. What is “right” and what is “wrong” depends on who you are, where you stand, and what you believe. But imagine a man who does not believe in God, who is intelligent, wealthy, and free from all fear. He tortures others for his pleasure, he makes products from human skin, he rapes without guilt, claiming it as his right, just as humans dominate animals without resistance. What will you say about such a man? Will you call him evil? Or will you admit that, in the eye of the universal equation, he is neither right nor wrong, simply an event unfolding as it must?   
         </p>
         <p class="text-lg text-gray-800 text-justify mb-6">
-         So what are we then? Are we truly ourselves, or just events playing their role? Do we even have an independent existence, or do we exist only as part of everything else? Our bodies are made of atoms, and atoms are made of subatomic particles. These particles obey physical laws, just like everything else. If we could calculate every interaction inside the body, along with every influence from outside, then the future evolution of that body could also be known. What it will do, what it will think, who it will meet, how it will look, all of it could be predicted. In such a case, nothing we do is truly our own. Everything is already fixed. Unless… unless there exists within us something beyond the reach of physical law. Unless there is a hidden variable independent, untouched, that can bend or break the equation. If such an energy exists, then life is more than calculation. Then the universe is not fully deterministic, but chaotic and alive. In simple words, there must be an Operator, something that stands outside the equation yet moves within it. And so I leave you here, with these questions. Let them follow you into your dreams. Sometimes, the sweetest sleep is the one haunted by thoughts too vast to answer.   
+         So what are we then? Are we truly ourselves, or just events playing their role? Do we even have an independent existence, or do we exist only as part of everything else? Our bodies are made of atoms, and atoms are made of subatomic particles. These particles obey physical laws, just like everything else. If we could calculate every interaction inside the body, along with every influence from outside, then the future evolution of that body could also be known. What it will do, what it will think, who it will meet, how it will look, all of it could be predicted. In such a case, nothing we do is truly our own. Everything is already fixed, as it is governed by the unchanging laws of physics. Unless… unless there exists within us something beyond the reach of physical law. Unless there is a hidden variable independent, untouched, that can bend or break the equation. If such an energy exists, then life is more than calculation. Then the universe is not fully deterministic, but chaotic and alive. In simple words, there must be an Operator, something that stands outside the equation yet moves within it. And so I leave you here, with these questions. Let them follow you into your dreams. Sometimes, the sweetest sleep is the one haunted by thoughts too vast to answer.   
+        </p>
+        <p class="text-lg text-gray-800 text-justify mb-6">
+         So, do we still believe that in reality there exists good and bad, joy and sorrow, right and wrong, truth and falsehood, evil and its opposite, or even that our very thoughts truly exist? If yes, then perhaps it’s time to pause and ask: why? Because in reality, everything is nothing more than an event unfolding under the laws of physics, the very same laws that govern the past, present, and future of the universe.
         </p>
         <!-- Add more paragraphs as needed -->
     </div>
+
+
+<!-- Comment Button -->
+<div class="text-center mb-12">
+  <button onclick="openModal()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition">
+    Add Comment
+  </button>
+</div>
+
+<!-- Comments Section -->
+<div class="max-w-4xl mx-auto px-6 mb-12">
+  <h2 class="text-2xl font-semibold mb-4">Comments</h2>
+  <div id="comments-container" class="space-y-4"></div>
+</div>
+
+<!-- Modal for Comment -->
+<div id="commentModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+    <h3 class="text-xl font-bold mb-4">Add a Comment</h3>
+    <form id="commentForm" method="POST" 
+          action="https://staticman3.herokuapp.com/v3/entry/github/DonafStrange/Website/main/comments">
+      
+      <!-- Hidden fields required by Staticman -->
+      <input type="hidden" name="options[redirect]" value="https://donafstrange.github.io/Website/Reality_of_The_Reality.html">
+      <input type="hidden" name="options[slug]" value="Reality_of_The_Reality">
+      <input type="hidden" name="fields[parent]" id="parentField" value="">
+
+      <input type="text" name="fields[name]" placeholder="Your Name" class="w-full border p-2 rounded mb-3" required>
+      <input type="email" name="fields[email]" placeholder="Your Email" class="w-full border p-2 rounded mb-3" required>
+      <textarea name="fields[message]" placeholder="Your Comment" class="w-full border p-2 rounded mb-3" required></textarea>
+      
+      <div class="flex justify-between">
+        <button type="button" onclick="closeModal()" class="bg-gray-400 px-4 py-2 rounded text-white">Cancel</button>
+        <button type="submit" class="bg-blue-600 px-4 py-2 rounded text-white">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  let replyingTo = null;
+
+  function openModal(replyId = null) {
+    replyingTo = replyId;
+    document.getElementById("parentField").value = replyId || "";
+    document.getElementById("commentModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("commentModal").classList.add("hidden");
+    document.getElementById("commentForm").reset();
+    replyingTo = null;
+  }
+</script>
+
 
 </body>
 </html>

@@ -1,0 +1,14 @@
+comments:
+  allowedFields: ["name", "email", "message", "page"]
+  requiredFields: ["name", "email", "message", "page"]
+  branch: "main"   # or 'master' depending on your repo default branch
+  commitMessage: "New comment for {options.page}"
+  path: "Comments/{options.page}"
+  filename: "comment-{@timestamp}"
+  format: "yaml"
+  moderation: true
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: iso8601
