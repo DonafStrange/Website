@@ -1,43 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage -->
   <url>
     <loc>https://donafstrange.github.io/Website/</loc>
     <lastmod>2025-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- thoughts.html -->
   <url>
     <loc>https://donafstrange.github.io/Website/thoughts.html</loc>
     <lastmod>2025-09-08</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Reality_of_The_Reality.html -->
   <url>
     <loc>https://donafstrange.github.io/Website/Reality_of_The_Reality.html</loc>
     <lastmod>2025-09-08</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Vo_Jo_Paas_Rahte_Hai.html -->
   <url>
     <loc>https://donafstrange.github.io/Website/Vo_Jo_Paas_Rahte_Hai.html</loc>
     <lastmod>2025-09-08</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Silent_Tears.html -->
   <url>
     <loc>https://donafstrange.github.io/Website/Silent_Tears.html</loc>
     <lastmod>2025-09-08</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
