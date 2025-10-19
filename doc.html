@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ScrollDocs Gallery</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/build/pdf.min.js"></script>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow: hidden;
+    background-color: #811331;
+  }
+
+  /* Main scrolling container */
+  #documents-container {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .doc-section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .pdf-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    overflow: hidden;
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5rem;
+  }
+
+  .doc-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .pdf-viewer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center PDF horizontally */
+  }
+
+  canvas {
+    border-radius: 0.75rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto; /* center and spacing between pages */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+
+<div class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md px-6 py-2 rounded-full shadow-md font-semibold z-50">
+  My Documents
+</div>
+
+<div id="documents-container">
+  <!-- PDFs will be inserted dynamically -->
+</div>
+
+<script>
+  const documents = [
+    { title: "MSc Transcript", path: "MSc_transcript.pdf" }
+    { title: "Master Thesis Certificate", path: "doc/master_Thesis_certificate.pdf" },
+    { title: "Workshop", path: "doc/workshop.pdf" },
+    { title: "Internship", path: "doc/internship.pdf" },
+    { title: "BSc Transcript", path: "doc/BSc_Transcript.pdf" },
+  ];
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/build/pdf.worker.min.js";
+
+  const container = document.getElementById("documents-container");
+
+  documents.forEach((doc, index) => {
+    const section = document.createElement("section");
+    section.className = "doc-section";
+
+    const card = document.createElement("div");
+    card.className = "pdf-card";
+
+    const title = document.createElement("div");
+    title.className = "doc-title";
+    title.textContent = doc.title;
+
+    const viewer = document.createElement("div");
+    viewer.id = `viewer-${index}`;
+    viewer.className = "pdf-viewer";
+
+    card.appendChild(title);
+    card.appendChild(viewer);
+    section.appendChild(card);
+    container.appendChild(section);
+
+    loadPDF(doc.path, viewer.id);
+  });
+
+  async function loadPDF(url, containerId) {
+    try {
+      const loadingTask = pdfjsLib.getDocument(url);
+      const pdf = await loadingTask.promise;
+
+      const viewer = document.getElementById(containerId);
+      viewer.innerHTML = '';
+
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        const page = await pdf.getPage(pageNum);
+        const scale = 1.3;
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = { canvasContext: context, viewport: viewport };
+        await page.render(renderContext).promise;
+
+        canvas.style.display = "block";
+        canvas.style.margin = "0 auto 1rem auto";
+
+        viewer.appendChild(canvas);
+      }
+
+    } catch (error) {
+      console.error('Error loading PDF:', error);
+      const viewer = document.getElementById(containerId);
+      viewer.innerHTML = `<div class="text-center text-red-500 p-4">⚠️ Failed to load document: ${url}</div>`;
+    }
+  }
+</script>
+</body>
+</html>
